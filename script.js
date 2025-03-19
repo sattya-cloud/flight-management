@@ -14,7 +14,7 @@ function addFlight() {
         crew_count: document.getElementById('crewCount').value
     };
 
-    fetch("http://www.satyam14.com/api/add_flight", {
+    fetch("http://aeab71d7804da46c7983e5b3e9396ae3-1764927452.us-east-1.elb.amazonaws.com/api/add_flight", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -28,7 +28,7 @@ function addFlight() {
 function deleteFlight() {
     const flightId = document.getElementById('deleteFlightId').value;
 
-    fetch("http://www.satyam14.com/api/delete_flight/${flightId}", {
+    fetch("http://aeab71d7804da46c7983e5b3e9396ae3-1764927452.us-east-1.elb.amazonaws.com/api/delete_flight/${flightId}", {
         method: 'DELETE'
     })
     .then(response => response.json())
@@ -38,7 +38,7 @@ function deleteFlight() {
 
 // Function to fetch and display all flights
 function fetchFlights() {
-    fetch("http://www.satyam14.com/api/fetch_flights")
+    fetch("http://aeab71d7804da46c7983e5b3e9396ae3-1764927452.us-east-1.elb.amazonaws.com/api/fetch_flights")
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
